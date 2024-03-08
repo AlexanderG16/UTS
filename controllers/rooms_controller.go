@@ -66,6 +66,7 @@ func GetDetailRooms(w http.ResponseWriter, r *http.Request) {
 			SendErrorResponse(w, 500, "Server failed to get detail room")
 			return
 		}
+		room.Participants = append(room.Participants, account)
 	}
 
 	var response m.DetailRoomResponse
